@@ -1,0 +1,12 @@
+{
+  "name": "Korat Drought WebMap (412345)",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "WebMap preview", "onAutoForward": "openBrowser" }
+  },
+  "postStartCommand": "nohup python3 -m http.server 8000 --directory docs > /tmp/webmap-server.log 2>&1 &",
+  "customizations": {
+    "vscode": { "extensions": ["ritwickdey.LiveServer"] }
+  }
+}
